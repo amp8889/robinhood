@@ -3,6 +3,11 @@
   "resourceVersion": "1.6",
   "name": "RobinhoodsGame",
   "resources": [
+    {"id":{"name":"sGrass","path":"sprites/sGrass/sGrass.yy",},"order":1,},
+    {"id":{"name":"oGrass","path":"objects/oGrass/oGrass.yy",},"order":1,},
+    {"id":{"name":"sPlayerR","path":"sprites/sPlayerR/sPlayerR.yy",},"order":0,},
+    {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
+    {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
