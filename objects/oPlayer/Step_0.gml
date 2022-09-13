@@ -1,6 +1,7 @@
-key_left = keyboard_check(vk_left);
-key_right = keyboard_check(vk_right);
+key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
+key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 key_jump = keyboard_check_pressed(vk_space);
+
 
 var move = key_right - key_left;
 
@@ -13,6 +14,20 @@ vsp = vsp + grv
 if (place_meeting(x,y+1,oGrass)) && (key_jump){
 	
 	vsp = -7;
+	
+}
+
+
+
+if (key_left){
+	
+	image_xscale = -0.2;
+	
+}
+
+if (key_right){
+	
+	image_xscale = 0.2;
 	
 }
 
@@ -43,10 +58,11 @@ if (place_meeting(x,y+vsp,oGrass))
 y = y + vsp;
 
 
+
 //Animation
 if (!place_meeting(x,y+1,oGrass)){
 	
-	if(sign(vsp) > 0) image_index = 1; else image_index = 0;	
+	//if(sign(vsp) > 0) image_index = 1; else image_index = 0;	
 	
 }
 else
@@ -62,8 +78,7 @@ else
 }
 
 
-//Suppose to change the direction you face, does not work currently, not sure why
-//if (hsp != 0) image_xscale = sign(hsp);
+
 
 
 
