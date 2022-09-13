@@ -31,7 +31,7 @@ if (menu_x > gui_width+150) && (menu_committed != -1)
 	switch (menu_committed)
 	{
 		
-		case 3: room_goto_next(); break;
+		case 3: default: room_goto_next(); break;
 		case 0: game_end(); break;
 		
 	}
