@@ -1,16 +1,16 @@
+//Check Player Inputs
 key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 key_jump = keyboard_check_pressed(vk_space);
 
 
+//Set Speed Variables
 var move = key_right - key_left;
-
 hsp = move * walksp;
-
 vsp = vsp + grv
 
 
-//Jump If Statment
+//Jumping
 if (place_meeting(x,y+1,oGrass)) && (key_jump){
 	
 	vsp = -7;
@@ -18,20 +18,23 @@ if (place_meeting(x,y+1,oGrass)) && (key_jump){
 }
 
 
-
-if (key_left){
+//Sprite Turning
+if (key_left && image_xscale > 0){
 	
 	image_xscale = -0.2;
+	x = x - 60;
 	
 }
 
-if (key_right){
+if (key_right && image_xscale < 0){
 	
 	image_xscale = 0.2;
+	x = x + 60;
 	
 }
 
 
+//Handle Collisions
 if (place_meeting(x+hsp,y,oGrass))
 {
 	
@@ -41,10 +44,6 @@ if (place_meeting(x+hsp,y,oGrass))
 	}
 	hsp = 0;
 }
-x = x + hsp;
-
-
-
 
 if (place_meeting(x,y+vsp,oGrass))
 {
@@ -55,28 +54,23 @@ if (place_meeting(x,y+vsp,oGrass))
 	}
 	vsp = 0;
 }
+
+
+//Move
+x = x + hsp;
 y = y + vsp;
 
 
-
 //Animation
-if (!place_meeting(x,y+1,oGrass)){
-	
-	//if(sign(vsp) > 0) image_index = 1; else image_index = 0;	
-	
-}
-else
-{
-	image_speed = 1
-	if(hsp == 0){
-		sprite_index = sPlayer;	
+if (place_meeting(x,y+1,oGrass)){
+	image_speed = 1;
+	if(key_left == 0 && key_right == 0){
+		sprite_index = sPlayer;
 	}
 	else{
 		sprite_index = sPlayerR;
-		image_speed = .5;
 	}
 }
-
 
 
 
