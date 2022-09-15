@@ -2,10 +2,13 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlyrState_Atk(){
 	//Make Player Stop Moving
-	if (place_meeting(x,y+1,oGrass)) {
+	if (place_meeting(x,y+1,oBlock)) {
 		hsp = 0;
 		vsp = 0;
 	}
+	
+	//Set Animation Speed
+	image_speed = 1;
 	
 	//Change animation to attack animation
 	if (sprite_index != sPlyrAtk) {
@@ -33,7 +36,13 @@ function PlyrState_Atk(){
 	mask_index = sPlyrIdle;
 	
 	if (animationEnd()) {
-		sprite_index = sPlyrIdle;
+		if (in_air) {
+			sprite_index = sPlyrJump;
+			image_index = 5;
+		}
+		else {
+		sprite_index = sPlyrIdle;	
+		}
 		state = PLAYERSTATE.FREE;
 	}
 }
