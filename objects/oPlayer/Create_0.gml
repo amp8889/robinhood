@@ -5,6 +5,7 @@ walksp = 8;
 jump_height = 10;
 in_air = false;
 image_speed = 1;
+hp = 4;
 
 state = PLAYERSTATE.FREE;
 hitByAttack = ds_list_create();

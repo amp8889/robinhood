@@ -27,7 +27,7 @@ function PlyrState_Atk(){
 			if (ds_list_find_index(hitByAttack, hitID) == -1) {
 				ds_list_add(hitByAttack, hitID);
 				with (hitID) {
-					EnemyHit(2);	
+					EnemyHit(1, sign(image_xscale));	
 				}
 			}
 		}

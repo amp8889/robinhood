@@ -8,7 +8,7 @@ if (place_meeting(x+hsp,y,oBlock))
 	{
 		x = x + sign(hsp);	
 	}
-	hsp = 0;
+	hsp = -hsp;
 }
 if (place_meeting(x,y+vsp,oBlock))
 {
@@ -19,6 +19,7 @@ if (place_meeting(x,y+vsp,oBlock))
 	vsp = 0;
 }
 
+//Move
 x = x + hsp;
 y = y + vsp;
 
@@ -36,4 +37,4 @@ else {
 	sprite_index = sEnemyInAir;
 	image_speed = 0;
 	if (sign(vsp) > 0) image_index = 1; else image_index = 0;
-}
+}	
