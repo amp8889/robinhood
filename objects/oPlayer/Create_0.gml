@@ -1,8 +1,8 @@
 hsp = 0;
 vsp = 0;
-grv = 0.3;
+grv = 0.6;
 walksp = 8;
-jump_height = 10;
+jump_height = 20;
 in_air = false;
 image_speed = 1;
 hp = 4;
