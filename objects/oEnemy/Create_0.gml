@@ -4,12 +4,12 @@ grv = 0.3;
 walksp = 8;
 image_speed = 1;
 
-state = PLAYERSTATE.FREE;
+state = ENEMYSTATE.FREE;
 hitByAttack = ds_list_create();
 
-enum PLAYERSTATE{
+enum ENEMYSTATE{
 	FREE,
-	ATTACK_SLASH,
+	ATTACK,
 	HIT,
 	DEAD,
 }
