@@ -1,11 +1,17 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlyrState_Atk(){
+	vsp = vsp + grv;
+	
 	//Make Player Stop Moving
 	if (place_meeting(x,y+1,oBlock)) {
 		hsp = 0;
 		vsp = 0;
 	}
+	
+	//Move
+	x = x + hsp;
+	y = y + vsp;
 	
 	//Set Animation Speed
 	image_speed = 1;
@@ -27,7 +33,7 @@ function PlyrState_Atk(){
 			if (ds_list_find_index(hitByAttack, hitID) == -1) {
 				ds_list_add(hitByAttack, hitID);
 				with (hitID) {
-					EnemyHit(1, sign(image_xscale));	
+					EnemyHit(1, sign(other.image_xscale));	
 				}
 			}
 		}

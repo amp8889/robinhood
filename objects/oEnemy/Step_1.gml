@@ -1,8 +1,7 @@
 if (hp <= 0) {
 	with(instance_create_layer(x,y,layer,oEnemyDead)) {
-		direction = other.hitFrom;
-		hsp = 3 * direction;
-		image_xscale = direction;
+		hsp = 3 * other.hitFrom;
+		image_xscale = other.hitFrom;
 	}
 	instance_destroy();
 }
