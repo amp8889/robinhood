@@ -2,34 +2,19 @@
 key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 key_jump = keyboard_check_pressed(vk_space);
+key_attack = keyboard_check_pressed(ord("J"));
 
 
-//Set Speed Variables
+//Set Variables
 var move = key_right - key_left;
 hsp = move * walksp;
-vsp = vsp + grv
+vsp = vsp + grv;
 
 
 //Jumping
 if (place_meeting(x,y+1,oGrass)) && (key_jump){
 	
 	vsp = -7;
-	
-}
-
-
-//Sprite Turning
-if (key_left && image_xscale > 0){
-	
-	image_xscale = -0.2;
-	x = x - 60;
-	
-}
-
-if (key_right && image_xscale < 0){
-	
-	image_xscale = 0.2;
-	x = x + 60;
 	
 }
 
@@ -61,15 +46,38 @@ x = x + hsp;
 y = y + vsp;
 
 
+//Attacking
+if (state == PLAYERSTATE.FREE && key_attack) {
+	
+}
+
+
 //Animation
+if (key_left && image_xscale > 0){
+	
+	image_xscale = -0.2;
+	
+	
+}
+
+if (key_right && image_xscale < 0){
+	
+	image_xscale = 0.2;
+	
+	
+}
+
 if (place_meeting(x,y+1,oGrass)){
-	image_speed = 1;
 	if(key_left == 0 && key_right == 0){
-		sprite_index = sPlayer;
+		sprite_index = sPlyrIdle;
 	}
 	else{
-		sprite_index = sPlayerR;
+		sprite_index = sPlyrRun;
 	}
+}
+
+else {
+	sprite_index = sPlyrJump;
 }
 
 
