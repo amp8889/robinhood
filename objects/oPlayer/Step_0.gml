@@ -8,9 +8,10 @@ if (place_meeting(x,y,oFinish)) {
 	room_goto(room + 1);
 }
 
-if (y > room_width) {
+if (y > room_width || hp <= 0) {
 	x = oStart.x;
 	y = oStart.y;
+	hp = 4;
 }
 
 switch (state)
