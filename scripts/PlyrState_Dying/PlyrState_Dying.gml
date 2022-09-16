@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function PlyrState_Free(){
+function PlyrState_Dying(){
 	if (!is_dying) {
 		is_dying = true;
 		sprite_index = sPlyrDeath;
