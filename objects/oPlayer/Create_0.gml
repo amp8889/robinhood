@@ -4,6 +4,7 @@ grv = 0.6;
 walksp = 8;
 jump_height = 20;
 in_air = false;
+is_dying = false;
 image_speed = 1;
 hp = 4;
 
@@ -13,6 +14,5 @@ hitByAttack = ds_list_create();
 enum PLAYERSTATE{
 	FREE,
 	ATTACK_SLASH,
-	HIT,
-	DEAD,
+	DYING,
 }

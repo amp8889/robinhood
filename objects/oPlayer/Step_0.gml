@@ -8,14 +8,19 @@ if (place_meeting(x,y,oFinish)) {
 	room_goto(room + 1);
 }
 
-if (y > room_width || hp <= 0) {
+if (y > room_width) {
 	x = oStart.x;
 	y = oStart.y;
 	hp = 4;
+}
+
+if (hp <= 0) {
+	state = PLAYERSTATE.DYING;
 }
 
 switch (state)
 {
 	case PLAYERSTATE.FREE: PlyrState_Free(); break;
 	case PLAYERSTATE.ATTACK_SLASH: PlyrState_Atk(); break;
+	case PLAYERSTATE.DYING: PlyrState_Dying(); break;
 }

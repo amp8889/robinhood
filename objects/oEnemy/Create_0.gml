@@ -1,4 +1,4 @@
-hsp = 0;
+hsp = 4;
 vsp = 8;
 grv = 0.3;
 walksp = 8;
@@ -15,6 +15,4 @@ hitByAttack = ds_list_create();
 enum ENEMYSTATE{
 	FREE,
 	ATTACK,
-	HIT,
-	DEAD,
 }
